@@ -5,7 +5,9 @@ import org.apache.ibatis.type.MappedTypes;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 
+@EnableCaching
 @MappedTypes(Region.class)
 @MapperScan("com.example.demo.data_access_layer.mapper")
 @SpringBootApplication

@@ -23,15 +23,11 @@ public interface RegionMapper {
     @Select("select * from region where id = #{id}")
     Optional<Region> getById(@Param("id") Long id);
 
-    @Select("select * from region where name = #{name} and short_name = #{short_name}")
-    Optional<Region> getByNames(@Param("name") String name,
-                                @Param("short_name") String shortName);
-
-    @Insert("insert into region (id, name, short_name) values (#{id}, #{name}, #{shortName})")
+    @Insert("insert into region (id, name, abbreviation) values (#{id}, #{name}, #{abbreviation})")
     void insert(Region region);
 
 
-    @Update("update region set name = #{name}, short_name = #{shortName} where id = #{id}")
+    @Update("update region set name = #{name}, abbreviation = #{abbreviation} where id = #{id}")
     void update(Region region);
 
     @Delete("delete from region where id = #{id}")

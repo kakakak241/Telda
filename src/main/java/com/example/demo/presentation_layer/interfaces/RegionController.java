@@ -6,12 +6,11 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface RegionController {
-    List<Region> getAll();
-    List<Region> getAllByName(String name);
+    List<Region> getAll() throws InterruptedException;
+    List<Region> getAllByName(String name) throws InterruptedException;
     Region getById(Long id);
-    Region getByNames(String name, String shortName);
-    void insert(Region region);
-    void update(Region region);
+    void insert(Region region) throws InterruptedException;
+    void update(Region region) throws InterruptedException;
     void delete(Region region);
     void deleteById(Long id);
     Long count();
